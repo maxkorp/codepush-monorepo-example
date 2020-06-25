@@ -1,0 +1,19 @@
+{
+  "name": "codepush-monorepo-example",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "author": "Max korp <maxkorp@8bytealchemy.com>",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
