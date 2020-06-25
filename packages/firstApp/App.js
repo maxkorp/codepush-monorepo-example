@@ -24,7 +24,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
+import codePush from 'react-native-code-push';
+
+const RawApp: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -110,5 +112,7 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
+
+const App = codePush(RawApp);
 
 export default App;

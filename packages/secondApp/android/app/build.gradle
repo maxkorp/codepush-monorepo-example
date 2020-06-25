@@ -85,7 +85,7 @@ import com.android.build.OutputFile
   ]
 
   apply from: "../../../../node_modules/react-native/react.gradle"
-  // apply from: "../../../../node_modules/react-native-code-push/android/codepush.gradle"
+  apply from: "../../../../node_modules/react-native-code-push/android/codepush.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -158,6 +158,14 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            buildConfigField "String", "CODEPUSH_KEY", '""'
+        }
+        releaseStaging {
+            buildConfigField "String", "CODEPUSH_KEY", '"<INSERT_STAGING_KEY>"'
+
+            // Note: It is a good idea to provide matchingFallbacks for the new buildType you create to prevent build issues
+            // Add the following line if not already there
+            matchingFallbacks = ['release']
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
@@ -165,6 +173,7 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            buildConfigField "String", "CODEPUSH_KEY", '"<INSERT_PRODUCTION_KEY>"'
         }
     }
 
