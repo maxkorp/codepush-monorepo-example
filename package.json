@@ -9,11 +9,12 @@
       "packages/*"
     ]
   },
-  "scripts": {
-
-  },
+  "scripts": {},
   "dependencies": {
+    "get-yarn-workspaces": "^1.0.2",
+    "metro-config": "^0.59.0"
   },
   "devDependencies": {
+    "axios": "^0.19.2"
   }
 }

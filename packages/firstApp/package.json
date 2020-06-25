@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android": "yarn metro && react-native run-android --no-packager",
+    "ios": "yarn metro && react-native run-ios --no-packager",
     "start": "react-native start",
+    "metro": "../../run-metro.js firstApp",
     "test": "jest",
     "lint": "eslint ."
   },
